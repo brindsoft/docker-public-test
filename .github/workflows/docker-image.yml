@@ -22,6 +22,13 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.SECRET_DOCKER }}
+    - name: Build the Docker image
+      uses: actions/checkout@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.SECRET_DOCKER }}
+        build-context: ./15.0
     - name: Build and push
       uses: docker/build-push-action@v3
       with:
