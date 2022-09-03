@@ -31,5 +31,5 @@ jobs:
       with:
         context: ./15.0
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/odoo:odoo150
+        tags: ghcr.io/${{ github.repository_owner }}/odoo11:odoo150
 
