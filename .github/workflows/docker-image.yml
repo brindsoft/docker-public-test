@@ -16,6 +16,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: login to GitHub Container Registry
+      uses: docker/login-action@v2
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.SECRET_DOCKER }}
     - name: Build the Docker image
       uses: actions/checkout@v2
       with:
@@ -31,5 +37,5 @@ jobs:
         password: ${{ secrets.SECRET_DOCKER }}
         context: ./15.0
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/odoo11:odoo150
+        tags: ghcr.io/${{ github.repository_owner }}/odoo:odoo150
 
