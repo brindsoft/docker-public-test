@@ -22,7 +22,7 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.SECRET_DOCKER }}
-    - name: checkout
+    - name: Build the Docker image
       uses: actions/checkout@v2
       with:
         registry: ghcr.io
