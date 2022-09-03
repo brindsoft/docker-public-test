@@ -20,7 +20,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         registry: ghcr.io
-        username: "yk2kus"
+        username: "brindsoft"
         password: ${{ secrets.SECRET_DOCKER }}
         build-context: ./15.0
     - name: Build and push
@@ -28,5 +28,5 @@ jobs:
       with:
         context: ./15.0
         push: true
-        tags: ghcr.io/yk2kus/odoo-docker-test:odoo150
+        tags: ghcr.io/${{ github.repository_owner }}/odoo:odoo150
 
